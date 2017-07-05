@@ -20,22 +20,20 @@ public class QualitativeParser {
     public static void main(String[] args){
 
         QualitativeParser parser = new QualitativeParser();
-        ExcelParser excel = new ExcelParser("Test.xls");
         WordParser word = new WordParser("C:\\Users\\Steve\\Documents\\GitHub\\Qualitative-Parser\\test.docx");
         System.out.println(word.getParanum());
         words = word.getWords();
         parser.printOccur(words);
+        System.out.println(freqs);
         
         Iterator it = freqs.entrySet().iterator();
         while (it.hasNext()) {
-            int i = 1;
             Map.Entry pair = (Map.Entry)it.next();
-            excel.writeToBookKey(0, i, pair.getKey().toString());
-            excel.writeToBookVal(1, i, pair.getValue().toString());
-            i++;
+            System.out.println(pair.getKey() + " = " + pair.getValue());
         }
 
-    }   
+    }
+    
     
     public void printOccur(List<String> list){
         for(String word : words){
