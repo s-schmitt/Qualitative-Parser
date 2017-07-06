@@ -57,4 +57,9 @@ public class WordParser {
             return words;
         
         }
+        
+        public List<XWPFParagraph> getPara(){
+            
+            return paragraphs;
+        }
 }
